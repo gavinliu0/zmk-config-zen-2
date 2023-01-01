@@ -50,31 +50,51 @@
 
                 lower_layer {
                         label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | ENT |   | SPC |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp RET        &kp SPACE  &trans   &kp RALT
+// ----------------------------------------------------------------------------------------------------------------------
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// | | GRAVE | |  1  | |  2  | |  3  | |  4  | |  5  |                |  6  | |  7  | |  8  | |  9  | |  0  | |  BCK  | |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// | |  BCK  | |  -  | |  +  | |  [  | |  ]  | |  |  |                |     | |  4  | |  5  | |  6  | |     | |       | |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// | |   [   | |     | |     | |    |  |     | |     |                |  0  | |  1  | |  2  | |  3  | |  \  | |   ]   | |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// |                                    -----   -----       ----       -----   -----                                    |
+// |                                   |     | |     |     |    |     | SPC | |     |                                   |
+// |                                    -----   -----       ----       -----   -----                                    |
+// ----------------------------------------------------------------------------------------------------------------------
+
+&kp GRAVE       &kp N1      &kp N2     &kp N3     &kp N4     &kp N5       &kp N6   &kp N7   &kp N8   &kp N9   &kp N0    &trans
+&kp BACKSPACE   &kp MINUS   &kp PLUS   &kp LBKT   &kp RBKT   &kp PIPE     &none    &kp N4   &kp N5   &kp N6   &none     &none
+&kp LBKT        &none       &none      &none      &none      &none        &none    &kp N1   &kp N2   &kp N3   &kp BSLH  &kp RBKT      
+                                       &none      &none      &none        &trans   &N0      &kp DOT
                         >;
                 };
 
                 raise_layer {
                         label = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | ENT |   | SPC |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp RET     &kp SPACE   &trans    &kp RALT
+                        bindings = < 
+// ----------------------------------------------------------------------------------------------------------------------
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// | |   ~   | |  !  | |  @  | |  #  | |  #  | |  $  |                |  ^  | |  &  | |  *  | |  (  | |  )  | |  BCK  | |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// | |  BCK  | |  _  | |  =  | |  {  | |  }  | |  |  |                |     | |     | |     | |  {  | |  }  | |       | |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// |  -------   -----   -----   -----   -----   -----                  -----   -----   -----   -----   -----   -------  |
+// | |   {   | |     | |     | |  ( | |   )  | |     |                |     | |     | |     | |  [  | |  ]  | |   }   | |
+// |  -------   -----   -----   -----   -----   -----       ----       -----   -----   -----   -----   -----   -------  |
+// |                                    -----   -----       ----       -----   -----                                    |
+// |                                   |     | |     |     |    |     | SPC | |     |                                   |
+// |                                    -----   -----       ----       -----   -----                                    |
+// ----------------------------------------------------------------------------------------------------------------------
+
+&kp TILDE       &kp EXCL    &kp AT      &kp HASH   &kp DLLR   &kp PRCNT           &kp CARET   &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR   &trans
+&kp BACKSPACE   &kp UNDER   &kp EQUAL   &kp LBRC   &kp RBRC   &kp PIPE            &none       &none      &none      &kp LBRC   &kp RBRC   &none
+&kp LBRC        &none       &none       &kp LPAR   &kp RPAR   &none               &none       &none      &none      &kp LBKT   &kp RBKT   &kp RBRC      
+                                        &none      &none      &none               &trans      &none      &none 
                         >;
                 };
         };
